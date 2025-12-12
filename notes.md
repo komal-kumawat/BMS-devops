@@ -33,6 +33,6 @@ using pnpm instead of npm "npm i -g pnpm"
         "exports":{"./client":"./src/index.ts"}
         creating a subroute so that we can import like 
         "import {client} from "@repo/db/client""
-    14. in web , ws-server , http-server folder add "@repo/db":"workspace:*" as a dev dependency 
+    14. in web , ws-server , http-server folder add "@repo/db":"workspace:*" as a dev dependency .
 
 
