@@ -26,13 +26,44 @@ using pnpm instead of npm "npm i -g pnpm"
     13. export prisma client so that our application can use it =>
         1. create a src folder and create a file name "index.ts"
         2. in index.ts
-        
-            import { PrismaClient } from "@prisma/client/extension";export const client = new PrismaClient();
-        
-        3. in package.json  add a exports section 
+
+            import { PrismaClient } from "../generated/prisma/index.js";
+
+            export const client = new PrismaClient();
+
+
+        3. in package.json  add a exports section
         "exports":{"./client":"./src/index.ts"}
-        creating a subroute so that we can import like 
+        creating a subroute so that we can import like
         "import {client} from "@repo/db/client""
     14. in web , ws-server , http-server folder add "@repo/db":"workspace:*" as a dev dependency .
 
+## http-server and ws-server:- 
+    1. npm init -y 
+    2. npx tsc --init
+    
+    3. in tsconfig.json
+        {
+
+            "extends":"@repo/typescript-config/base.json",
+            "compilerOptions": {
+                "rootDir": "./src",
+                "outDir": "./dist"
+            }
+        }
+    4. in package.json
+        "devDependencies": {
+            "@repo/db":"workspace:*",
+            "@repo/typescript-config":"workspace:*"
+
+        },
+        in stripts add  
+           "build":"tsc -b",
+            "dev":"npm run build && npm run start",
+            "start":"node dist/index.ts"
+        
+    5. create a src folder and create a file index.ts
+    6. write basic express code and websocket code in index.ts of  http-server and ws-server respectively and connect them to the database
+
+## next js application (in apps folder->web->app->page.tsx)
 
