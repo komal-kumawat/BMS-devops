@@ -27,7 +27,10 @@ using pnpm instead of npm "npm i -g pnpm"
         1. create a src folder and create a file name "index.ts"
         2. in index.ts
 
-            import { PrismaClient } from "@prisma/client/extension";export const client = new PrismaClient();
+            import { PrismaClient } from "../generated/prisma/index.js";
+
+            export const client = new PrismaClient();
+
 
         3. in package.json  add a exports section
         "exports":{"./client":"./src/index.ts"}
@@ -61,4 +64,6 @@ using pnpm instead of npm "npm i -g pnpm"
         
     5. create a src folder and create a file index.ts
     6. write basic express code and websocket code in index.ts of  http-server and ws-server respectively and connect them to the database
+
+## next js application (in apps folder->web->app->page.tsx)
 
