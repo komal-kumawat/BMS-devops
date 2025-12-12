@@ -83,3 +83,7 @@ using pnpm instead of npm "npm i -g pnpm"
 + staging.week-25-http
 + staging.week-25-ws
 + staging.week-25-fe
+
+6. Refresh nginx config
+7. Test that everything is working
+
