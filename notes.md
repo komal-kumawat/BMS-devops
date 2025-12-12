@@ -71,6 +71,6 @@ using pnpm instead of npm "npm i -g pnpm"
 
 # Deployment steps
 
--> Create 2 servers
--> Add node , nginx to both the servers 
-> Clone the monorepo to both the servers
+1. Create 2 servers
+2. Add node , nginx to both the servers 
+3. Clone the monorepo to both the servers
