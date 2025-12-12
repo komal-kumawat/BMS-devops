@@ -11,8 +11,10 @@ app.post("/signup" , async(req,res)=>{
     const username = req.body.username;
     const password = req.body.password;
     const user = await client.user.create({
-        username:username,
-        password:password
+        data: {
+            username:username,
+            password:password
+        }
     });
     if(user)
     return res.json({
@@ -27,7 +29,7 @@ app.post("/signup" , async(req,res)=>{
 
 })
 
-const port = 3000
+let port = 3002;
 app.listen(port , ()=>{
     console.log(`app listening to port ${port}` )
 })

@@ -4,7 +4,13 @@ import {client} from "@repo/db/client"
 
 
 export default async function Home() {
-  const user = await client.user.findFirst();
+  // const user = await client.user.create({
+  //   data: {
+  //     username:"komalk",
+  //     password:"123456"
+  //   }
+  // });
+  const user  = await client.user.findFirst();
   return (
     <div>
      {user?.username}
