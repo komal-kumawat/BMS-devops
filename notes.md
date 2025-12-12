@@ -66,4 +66,11 @@ using pnpm instead of npm "npm i -g pnpm"
     6. write basic express code and websocket code in index.ts of  http-server and ws-server respectively and connect them to the database
 
 ## next js application (in apps folder->web->app->page.tsx)
+    1. write basic nextjs code 
 
+
+# Deployment steps
+
+-> Create 2 servers
+-> Add node , nginx to both the servers 
+> Clone the monorepo to both the servers
