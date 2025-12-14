@@ -66,4 +66,55 @@ using pnpm instead of npm "npm i -g pnpm"
     6. write basic express code and websocket code in index.ts of  http-server and ws-server respectively and connect them to the database
 
 ## next js application (in apps folder->web->app->page.tsx)
+    1. write basic nextjs code 
+
+
+# Deployment steps
+
+1. Create 2 servers
+2. Add node , nginx to both the servers 
+3. Clone the monorepo to both the servers
+4. Start 3 processes (next , ws , http)
+5. Point our domain names to the respective servers
+* week-25-http
+* week-25-ws
+* week-25-fe
+
++ staging.week-25-http
++ staging.week-25-ws
++ staging.week-25-fe
+
+6. Refresh nginx config
+7. Test that everything is working
+
+
+### How to create ssh key
+- on terminal write:-
+    - ssh-keygen 
+    - then enter where you want to save the ssh key(/Users/komalkumawat/.ssh/id_rsa_do)
+    - for finding the ssh key write 
+        - cat ~/.ssh/id_rsa_do (id_rsa_do is the name of the ssh key)
+        - cat ~/.ssh/id_rsa_do.pub (for accessing public key )
+
+
+### For Adding node in both dev and prod
+- Add nvm using (digital ocean nvm node install documentation ) follow all commands
+use this bash command ("curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash")
+
+- then ("source ~/.bashrc")
+
+### install nginx in both 
+- sudo apt-get upgrade
+- sudo apt update
+- sudo apt install nginx
+
+
+### create domains on domains.squarespace.com for all 6
+* week-25-http
+* week-25-ws
+* week-25-fe
+
++ staging.week-25-http
++ staging.week-25-ws
++ staging.week-25-fe
 
