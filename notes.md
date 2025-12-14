@@ -1,3 +1,15 @@
+# Aim
+- Deploying a monorepo (http , ws , prisma , postgres , nextjs)
+- env variables
+- dev vs prod enviroments , periodic releases
+- Testing in CI pipelines
+- Cert managment
+- CD pipeline to refresh certs every month
+- CD pipeline to copy the prod DB to dev every day
+
+
+
+
 Create turborepo "npx create-turbo@latest"
 using pnpm instead of npm "npm i -g pnpm"
 
