@@ -130,3 +130,12 @@ use this bash command ("curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0
 + staging.week-25-ws
 + staging.week-25-fe
 
+#### Store private key in github secrets
+- Go to github repo 
+- go to settings
+- go to secrets and variables
+- click on actions 
+- click on new repo secret
+- name it and paste the ssh private key in secret
+
+
