@@ -86,7 +86,7 @@ using pnpm instead of npm "npm i -g pnpm"
 1. Create 2 servers
 2. Add node , nginx to both the servers 
 3. Clone the monorepo to both the servers
-4. Start 3 processes (next , ws , http)
+4. Start 3 processes (next , ws , http) using pm2
 5. Point our domain names to the respective servers
 * week-25-http
 * week-25-ws
