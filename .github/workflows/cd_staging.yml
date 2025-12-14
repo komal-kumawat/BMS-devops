@@ -1,22 +1,23 @@
 name: Deploy to staging
+
 on:
   push:
     branches:
-      - "bms"
+      - bms
 
 jobs:
-
   redeploy_everything:
     name: Deploying everything to the staging cluster
     runs-on: ubuntu-latest
-    steps: 
+
+    steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 64.227.147.124 >> ~/.ssh/known_hosts
+
       - name: SSH into server
         run: |
-        echo ${{secrets.SSH_PRIVATE_KEY}} &> ~/ssh_key
-        ssh -i ~/ssh_key root@64.227.147.124
-        cd week-25-ci-next-app/ && git pull
-        pnpm install
-        pnpm run build
-        pm2 restart fe_server
-        pm2 restart http-server
-        pm2 restart ws-server
+          ssh -i ~/.ssh/id_rsa root@64.227.147.124 "echo Connected successfully"
