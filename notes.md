@@ -1,3 +1,15 @@
+# Aim
+- Deploying a monorepo (http , ws , prisma , postgres , nextjs)
+- env variables
+- dev vs prod enviroments , periodic releases
+- Testing in CI pipelines
+- Cert managment
+- CD pipeline to refresh certs every month
+- CD pipeline to copy the prod DB to dev every day
+
+
+
+
 Create turborepo "npx create-turbo@latest"
 using pnpm instead of npm "npm i -g pnpm"
 
@@ -74,7 +86,7 @@ using pnpm instead of npm "npm i -g pnpm"
 1. Create 2 servers
 2. Add node , nginx to both the servers 
 3. Clone the monorepo to both the servers
-4. Start 3 processes (next , ws , http)
+4. Start 3 processes (next , ws , http) using pm2
 5. Point our domain names to the respective servers
 * week-25-http
 * week-25-ws
@@ -117,4 +129,13 @@ use this bash command ("curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0
 + staging.week-25-http
 + staging.week-25-ws
 + staging.week-25-fe
+
+#### Store private key in github secrets
+- Go to github repo 
+- go to settings
+- go to secrets and variables
+- click on actions 
+- click on new repo secret
+- name it and paste the ssh private key in secret
+
 
